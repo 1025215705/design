@@ -65,7 +65,7 @@ const routes: Array<RouteConfig> = [
         component: bfc,
     },
     {
-        path: '/layout/4',
+        path: '/layout/3',
         name: '4',
         component: flex,
     }

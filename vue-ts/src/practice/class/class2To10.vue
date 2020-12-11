@@ -64,23 +64,61 @@
 			<div>let 没有变量的提升，所以它有块级作用域</div>
 			<div>var 有变量的提升，所以它有全局的作用域</div>
 		</el-collapse-item>
-		<el-collapse-item
-			title="全局作用域中，用 const 和 let 声明的变量不在 window 上，那到底在哪里？如何去获取？"
-			name="26"
-		>
-			<div>const 一般都是常量， 没有变量的提升，所以它有块级作用域</div>
-			<div>let 没有变量的提升，所以它有块级作用域</div>
-			<div>var 有变量的提升，所以它有全局的作用域</div>
-		</el-collapse-item>
 		<el-collapse-item title="下面的代码打印什么内容，为什么？" name="33">
-			<div>var b = 10; 
-                (function b(){
-                     b = 20; 
-                     console.log(b);
-                      })();
-                </div>
-			<div>输出20</div>
-			
+			<div>var b = 10;<br> (function b(){ <br> b = 20; <br>console.log(b);<br> })();</div>
+			<div>
+				输出<br />
+				b的方法<br />
+				原因:一个声明在函数体内都是可见的，函数声明优先于变量声明；
+				在非匿名自执行函数中，函数变量为只读状态无法修改；
+			</div>
+		</el-collapse-item>
+		<el-collapse-item
+			title="简单改造下面的代码，使之分别打印 10 和 20"
+			name="34"
+		>
+			<div>var b = 10; <br>(function b(){<br> b = 20; <br> console.log(b);<br> })();</div>
+			<div>
+				改写后:<br />
+				var b = 10;<br> (function b(){ <br> var b = 20; //or let b = 20; var
+				具有全局作用域和函数块级作用域 <br>console.log(this.b); //10
+				<br>console.log(b);//20 <br>})();
+			</div>
+		</el-collapse-item>
+		<el-collapse-item title="下面代码输出什么" name="41">
+			<div>
+				var a = 10; <br>(function () { <br>console.log(a) //没有加上this,
+				块级作用域没有声明 <br> a = 5 <br> console.log(window.a) // 全局的a值 var
+				a = 20; <br>console.log(a)；//声明了函数的块级作用域里的this })()
+			</div>
+			<div>
+				输出<br />
+				<br />
+				undefined=>10=>20
+			</div>
+		</el-collapse-item>
+		<el-collapse-item
+			title="使用 sort() 对数组 [3, 15, 8, 29, 102, 22] 进行排序，输出结果"
+			name="43"
+		>
+			<div>[3, 15, 8, 29, 102, 22].sort((a,b) => {return a - b});</div>
+			<div>
+				返回值大于0 即a-b 大于 0 ， a 和 b 交换位置 <br>返回值大于0 即a-b
+				小于 0 ， a 和 b 位置不变<br> 返回值等于0 即a-b = 0 ， a 和 b
+				位置不变
+			</div>
+		</el-collapse-item>
+		<el-collapse-item
+			title="call 和 apply 的区别是什么，哪个性能更好一些"
+			name="46">
+			<div><a href="https://www.jianshu.com/p/7c797a565f14">call 和 apply 的区别是什么，哪个性能更好一些</a></div>
+			<div>
+                Function.prototype.apply和Function.prototype.call 的作用是一样的，区别在于传入参数的不同；
+                <br>第一个参数都是，指定函数体内this的指向；
+                <br>第二个参数开始不同，apply是传入带下标的集合，数组或者类数组，apply把它传给函数作为参数，
+                <br>call从第二个开始传入的参数是不固定的，都会传给函数作为参数。
+            </div>
+            <div>call 的方法更好一点  call 方法比 apply 快的原因是 call 方法的参数格式正是内部方法所需要的格式</div>
 		</el-collapse-item>
 	</el-collapse>
 </template>
@@ -261,7 +299,7 @@ export default {
 				[2, 2],
 				[3, 3],
 			])
-			console.log([...map])
+			console.log([...m6])
 			// Array 转 map
 			const m7 = new Map([
 				[1, 1],
