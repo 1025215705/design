@@ -19,6 +19,7 @@ import proto from '../practice/JS/proto.vue'
 import this1 from '../practice/JS/this.vue'
 import asyn from '../practice/JS/asyn.vue'
 import eventLoop from '../practice/JS/eventLoop.vue'
+import promise from '../practice/JS/promise.vue'
 Vue.use(VueRouter)
 const routes: Array<RouteConfig> = [
 	{
@@ -134,6 +135,11 @@ const routes: Array<RouteConfig> = [
 		name: '15',
 		component: eventLoop,
 	},
+	{
+		path: '/layout/16',
+		name: '16',
+		component: promise,
+	},
 ]
 
 const router = new VueRouter({
@@ -141,5 +147,4 @@ const router = new VueRouter({
 	base: process.env.BASE_URL,
 	routes,
 })
-
 export default router

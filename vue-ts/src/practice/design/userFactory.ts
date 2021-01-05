@@ -6,7 +6,7 @@ class User {
         this.auth = auth;
     }
 }
-class userFactory {
+class UserFactory {
     static createUserFactory(name: any) {
         if (name == 'admin') {
             return new User(name, 1);
@@ -17,8 +17,8 @@ class userFactory {
     }
 }
 export default function main() {
-    const user1 = userFactory.createUserFactory("admin");
-    const user2 = userFactory.createUserFactory("user");
+    const user1 = UserFactory.createUserFactory("admin");
+    const user2 = UserFactory.createUserFactory("user");
 
     console.log(user1);
     console.log(user2);
