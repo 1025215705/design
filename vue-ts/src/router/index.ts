@@ -19,6 +19,9 @@ import proto from '../practice/JS/proto.vue'
 import this1 from '../practice/JS/this.vue'
 import asyn from '../practice/JS/asyn.vue'
 import eventLoop from '../practice/JS/eventLoop.vue'
+import promise from '../practice/JS/promise.vue'
+import asyncAndawait from '../practice/JS/asyncAndawait.vue'
+import task from '../practice/JS/task.vue'
 Vue.use(VueRouter)
 const routes: Array<RouteConfig> = [
 	{
@@ -133,6 +136,21 @@ const routes: Array<RouteConfig> = [
 		path: '/layout/15',
 		name: '15',
 		component: eventLoop,
+	},
+	{
+		path: '/layout/16',
+		name: '16',
+		component: promise,
+	},
+	{
+		path: '/layout/17',
+		name: '17',
+		component: asyncAndawait,
+	},
+	{
+		path: '/layout/18',
+		name: '18',
+		component: task,
 	},
 ]
 
