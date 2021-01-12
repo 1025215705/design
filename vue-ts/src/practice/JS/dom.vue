@@ -24,7 +24,7 @@
                     <li>建议一般用property</li>
 				</ul>
 			</li>
-            	<li>
+            <li>
 				DOM 性能
 				<ul>
 					<li>DOM操作非常昂贵， 避免频繁的DOM操作</li>
