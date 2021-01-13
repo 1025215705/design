@@ -57,14 +57,13 @@
                     </li>
 					<li>分析拆解url各个部分</li>
 				</ul>
-			</li>
-            
+			</li>  
 		</ul>
 	</div>
 </template>
 <script>
 export default {
-	name: 'asyn',
+	name: 'dom',
 	data() {
 		return {
 			url:
@@ -72,33 +71,7 @@ export default {
 		}
 	},
 	methods: {
-		loadImg(src) {
-			const p = new Promise((resolve, reject) => {
-                const img = document.createElement('img');
-				img.onload = () => {
-					resolve(img)
-				}
-				img.onerror = () => {
-					const err = new Error('图片加载失败')
-                    reject(err)
-                }
-                img.src = src;
-			})
-			return p
-		},
-		loadingImg() {
-			this.loadImg(this.url)
-				.then((img) => {
-					console.log(img.width)
-					return img
-				})
-				.then((img) => {
-					console.log(img.height)
-				})
-				.catch((ex) => {
-					console.error(ex)
-				})
-		},
+	
 	},
 }
 </script>

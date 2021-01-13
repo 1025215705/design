@@ -44,7 +44,7 @@
 				</ul>
 			</li>
 			<li>
-				request header
+				response header
 				<ul>
 					<li>
 						set-Cookie
@@ -80,89 +80,52 @@
 					<li>
 						控制缓存的逻辑
 					</li>
-                    <li>
+					<li>
 						max-age 控制时间
 					</li>
-                    <li>
+					<li>
 						no-cache 不缓存
 					</li>
 				</ul>
 			</li>
-            <li>
+			<li>
 				协商缓存
 				<ul>
 					<li>
-						服务器端缓存策略 （ps 作用 ：1 要不要用缓存 2  是否和服务端的资源一样（资源标识））
+						服务器端缓存策略 （ps 作用 ：1 要不要用缓存 2
+						是否和服务端的资源一样（资源标识））
 					</li>
 					<li>
-						资源标识<br>
-                        response head 两种<br>
-                        last-modified 资源的最后修改时间<br>
-                        Etag 资源的唯一标识（类似人类的指纹）<br>
+						资源标识<br />
+						response head 两种<br />
+						last-modified 资源的最后修改时间<br />
+						Etag 资源的唯一标识（类似人类的指纹）<br />
 					</li>
-                    
 				</ul>
 			</li>
-            <li>
-                三种刷新操作(不同刷新操作，不同的缓存策略)
-                <ul>
-                    <li>正常操作（url 放浏览器地址栏）：强制缓存有效，协商缓存有效</li>
-                    <li>手动刷新（F5 刷新）：强制缓存失效，协商缓存有效</li>
-                    <li>强制刷新（ctrl + F5）强制缓存失效，协商缓存有效</li>
-                </ul>
-            </li>
+			<li>
+				三种刷新操作(不同刷新操作，不同的缓存策略)
+				<ul>
+					<li>
+						正常操作（url
+						放浏览器地址栏）：强制缓存有效，协商缓存有效
+					</li>
+					<li>手动刷新（F5 刷新）：强制缓存失效，协商缓存有效</li>
+					<li>强制刷新（ctrl + F5）强制缓存失效，协商缓存有效</li>
+				</ul>
+			</li>
 		</ul>
 	</div>
 </template>
 <script>
 export default {
-	name: 'ajax',
+	name: 'http',
 	data() {
 		return {
 			names: '',
 		}
 	},
-	methods: {
-		get() {
-			const xhr = new XMLHttpRequest()
-			xhr.open('GET', '/data/test.json', false)
-			xhr.onreadstatechange = function() {
-				if (xhr.readyState === 4) {
-					//
-					if (xhr.state === 200) {
-						alert(xhr.responseText)
-					} else {
-						console.log('其他情况')
-					}
-				}
-			}
-			xhr.send(null)
-		},
-		post() {
-			const xhr = new XMLHttpRequest()
-			xhr.open('POST', '/login', false)
-			xhr.onreadstatechange = function() {
-				if (xhr.readyState === 4) {
-					if (xhr.state === 200) {
-						alert(xhr.responseText)
-					} else {
-						console.log('其他情况')
-					}
-				}
-			}
-			xhr.send(JSON.stringify({ username: '11', password: '123456' }))
-		},
-		jsonp() {
-			//   $.ajax({
-			//     url: 'http://localhost:8882/x-origin.json',
-			//     dataType: 'jsonp',
-			//     jsonpCallback: 'callback',
-			//     success: function (data) {
-			//       console.log(data)
-			//     },
-			//   })
-		},
-	},
+	methods: {},
 }
 </script>
 <style scoped></style>

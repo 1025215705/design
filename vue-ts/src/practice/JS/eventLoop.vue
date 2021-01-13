@@ -40,11 +40,17 @@
 				
 			</li>
 		</ul>
+        <img :src="imgUrl">
 	</div>
 </template>
 <script>
+import imgUrl from "../../assets/eventLoop.png"
 export default {
-	
+	data() {
+		return {
+			imgUrl: imgUrl,
+		}
+	},
 }
 </script>
 <style scoped></style>

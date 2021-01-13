@@ -34,5 +34,8 @@ body{
     width: 200px;
     height: 100px;
     border: 1px solid blue;
+    top:20px;
+    left:50px;
 }
+
 </style>
