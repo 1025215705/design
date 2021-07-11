@@ -15,7 +15,7 @@
 </template>
 <script>
 export default {
-	name: 'asyn',
+	name: 'thing',
 	data() {
 		return {
 			url:

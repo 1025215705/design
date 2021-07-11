@@ -8,8 +8,7 @@
               <li>window.innerHeight 网页视口高度</li>
               <li>document.body.clientHeight body 高度</li>
           </ul>
-          demo 如下图
-          <!-- <img src="../../asset/pin.png"> -->
+           <img :src="imgUrl"> 
 		<h4>vw/vh</h4>
         <p>
             vmax 取两者最大值<br>
@@ -18,7 +17,16 @@
 	</div>
 </template>
 <script>
-export default {}
+import imgUrl from "../../assets/pin.png"
+export default {
+    data(){
+        return {
+            imgUrl:imgUrl
+
+        }
+
+    }
+}
 </script>
 <style scoped>
 </style>

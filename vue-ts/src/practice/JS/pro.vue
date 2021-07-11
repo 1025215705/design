@@ -100,52 +100,14 @@
 </template>
 <script>
 export default {
-	name: 'ajax',
+	name: 'pro',
 	data() {
 		return {
 			names: '',
 		}
 	},
 	methods: {
-		get() {
-			const xhr = new XMLHttpRequest()
-			xhr.open('GET', '/data/test.json', false)
-			xhr.onreadstatechange = function() {
-				if (xhr.readyState === 4) {
-					//
-					if (xhr.state === 200) {
-						alert(xhr.responseText)
-					} else {
-						console.log('其他情况')
-					}
-				}
-			}
-			xhr.send(null)
-		},
-		post() {
-			const xhr = new XMLHttpRequest()
-			xhr.open('POST', '/login', false)
-			xhr.onreadstatechange = function() {
-				if (xhr.readyState === 4) {
-					if (xhr.state === 200) {
-						alert(xhr.responseText)
-					} else {
-						console.log('其他情况')
-					}
-				}
-			}
-			xhr.send(JSON.stringify({ username: '11', password: '123456' }))
-		},
-		jsonp() {
-			//   $.ajax({
-			//     url: 'http://localhost:8882/x-origin.json',
-			//     dataType: 'jsonp',
-			//     jsonpCallback: 'callback',
-			//     success: function (data) {
-			//       console.log(data)
-			//     },
-			//   })
-		},
+	
 	},
 }
 </script>

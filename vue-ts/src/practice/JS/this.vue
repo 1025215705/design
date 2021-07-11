@@ -15,19 +15,13 @@
 			<li>
 				手写bind函数
 			</li>
-			<li>
-				实际开发中闭包的应用
-				<ul>
-					<li>隐藏数据</li>
-					<li>如做一个简单的cache工具</li>
-				</ul>
-			</li>
+			
 		</ul>
 	</div>
 </template>
 <script>
 export default {
-	name: 'typeOf',
+	name: 'this',
 	data() {
 		return {
 			names: '',
@@ -57,20 +51,6 @@ Function.prototype.bind1 = function() {
 	// 	return self.apply(t, args)
 	// }
 }
-//闭包用于隐藏数据
-function createCache() {
-	const data = {}
-	return {
-		set: function(key, val) {
-			data[key] = val
-		},
-		get: function(key) {
-			return data[key]
-		},
-	}
-}
- const c = createCache();
- c.set('a',100);
- console.log(c.get('a'));
+
 </script>
 <style scoped></style>

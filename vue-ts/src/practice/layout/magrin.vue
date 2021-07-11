@@ -9,27 +9,16 @@
 				<li>2： 相邻的magrin 会发生重叠</li>
 			</ul>
 		</div>
+        <div>
+            <div style="margin-bottom:10px; height:100px;background-color:red"></div> 
+             <div style="margin-top:100px;height:100px;background-color:blue"></div>
+        </div>
 	</div>
 </template>
 <script>
 export default {}
 </script>
 <style scoped>
-.box {
-	width: 100px;
-	padding: 10px;
-	border: 1px solid #ccc;
-	margin: 10px;
-	background-color: blue;
-}
-.box2 {
-	width: 100px;
-	padding: 10px;
-	border: 1px solid #ccc;
-	margin: 10px;
-	background-color: red;
-	box-sizing: border-box;
-}
 p {
 	font-size: 16px;
 	line-height: 1;

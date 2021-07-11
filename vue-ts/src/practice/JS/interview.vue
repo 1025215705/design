@@ -107,7 +107,7 @@
 </template>
 <script>
 export default {
-	name: 'ajax',
+	name: 'interview',
 	data() {
 		return {
 			names: '',

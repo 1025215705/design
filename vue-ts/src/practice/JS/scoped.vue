@@ -35,13 +35,21 @@
 						函数作为参数被传递的面试题
 						<button @click="testPrint">按钮</button>
 					</li>
-                    <li>
-                        闭包： 自由变量的查找， 是在函数定义的地方，向上级作用域查找， 不是在执行的地方！！！
-                    </li>
+					<li>
+						闭包： 自由变量的查找，
+						是在函数定义的地方，向上级作用域查找，
+						不是在执行的地方！！！
+					</li>
+				</ul>
+			</li>
+			<li>
+				实际开发中闭包的应用
+				<ul>
+					<li>隐藏数据</li>
+					<li>如做一个简单的cache工具</li>
 				</ul>
 			</li>
 		</ul>
-		<!-- <button></button> -->
 	</div>
 </template>
 <script>
@@ -73,19 +81,34 @@ export default {
 			}
 		},
 		testCreate() {
-			const fn = this.createfn();
-			const a = 200;
+			const fn = this.createfn()
+			const a = 200
 			fn()
 		},
 		testPrint() {
-			const a = 200;
+			const a = 200
 			this.fn()
 		},
 		fn() {
-			const a = 100;
+			const a = 100
 			console.log(a)
 		},
 	},
 }
+//闭包用于隐藏数据
+function createCache() {
+	const data = {}
+	return {
+		set: function(key, val) {
+			data[key] = val
+		},
+		get: function(key) {
+			return data[key]
+		},
+	}
+}
+ const c = createCache();
+ c.set('a',100);
+ console.log(c.get('a'));
 </script>
 <style scoped></style>

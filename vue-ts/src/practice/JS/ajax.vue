@@ -27,7 +27,6 @@
 							<li>同源：协议、域名、端口、三者必须一致</li>
 						</ul>
 					</li>
-
 					<li>
 						跨域
 						<ul>
@@ -39,7 +38,7 @@
 						实现跨域的常见的方式 jsonp 或 cros
 						<ul>
 							<li>script 链接</li>
-							<li @click="jsonp">json 使用</li>
+							<li @click="jsonp">jsonp 使用</li>
 							<li @click="jsonp">服务器设置http header</li>
 						</ul>
 					</li>
@@ -75,35 +74,7 @@ export default {
 		}
 	},
 	methods: {
-		get() {
-			const xhr = new XMLHttpRequest()
-			xhr.open('GET', '/data/test.json', false)
-			xhr.onreadstatechange = function() {
-				if (xhr.readyState === 4) {
-					//
-					if (xhr.state === 200) {
-						alert(xhr.responseText)
-					} else {
-						console.log('其他情况')
-					}
-				}
-			}
-			xhr.send(null)
-		},
-		post() {
-			const xhr = new XMLHttpRequest()
-			xhr.open('POST', '/login', false)
-			xhr.onreadstatechange = function() {
-				if (xhr.readyState === 4) {
-					if (xhr.state === 200) {
-						alert(xhr.responseText)
-					} else {
-						console.log('其他情况')
-					}
-				}
-			}
-			xhr.send(JSON.stringify({ username: '11', password: '123456' }))
-		},
+	
 		jsonp() {
 			//   $.ajax({
 			//     url: 'http://localhost:8882/x-origin.json',

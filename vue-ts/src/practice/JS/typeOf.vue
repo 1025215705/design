@@ -5,7 +5,10 @@
 			<li>
 				<ul>
 					<li>1: 判断值得类型</li>
-					<li>2: 判断是否是引用类型, null 也是一种引用类型</li>
+					<li>
+						2: 判断是否是引用类型, null 也是一种引用类型(typeOf
+						Object == "object" 并 Object != null )
+					</li>
 					<li>3: 判断函数</li>
 				</ul>
 			</li>
@@ -14,6 +17,7 @@
 				<ul>
 					<li>JSON.pasre(JSON.stringify(a))</li>
 					<li>lodash第三方库</li>
+					<li>var p = Object.assign({}, o) 只能拷贝一层的浅拷贝，所以不能算是深拷贝的一种</li>
 				</ul>
 			</li>
 			<li>除了 == null 之外， 其他一律用===</li>
