@@ -102,6 +102,7 @@
 				</ul>
 			</li>
 		</ul>
+		<el-radio v-model="single === 1"></el-radio>
 	</div>
 </template>
 <script>
@@ -110,6 +111,7 @@ export default {
 	data() {
 		return {
 			names: '',
+			single:1
 		}
 	},
 	methods: {

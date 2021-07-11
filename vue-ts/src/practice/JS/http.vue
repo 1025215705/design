@@ -10,7 +10,7 @@
 						header)
 					</li>
 					<li>3: 什么是restful API</li>
-					<li>4: 描述下http 的缓存机制I</li>
+					<li>4: 描述下http的缓存机制</li>
 				</ul>
 			</li>
 			<li>
