@@ -28,6 +28,7 @@ import ajax from '../practice/JS/ajax.vue'
 import http from '../practice/JS/http.vue'
 import dev from '../practice/JS/dev.vue'
 import pro from '../practice/JS/pro.vue'
+import es6 from '../practice/es6/index.vue'
 Vue.use(VueRouter)
 const routes: Array<RouteConfig> = [
 	{
@@ -188,6 +189,11 @@ const routes: Array<RouteConfig> = [
 		name: '24',
 		component: pro,
 	},
+	{
+		path:'/es6',
+		name:"es6",
+		component:es6
+	}
 ]
 
 const router = new VueRouter({
