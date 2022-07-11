@@ -1,11 +1,11 @@
 <template>
-	<el-collapse v-model="activeNames" @change="handleChange">
+	<el-collapse v-model="activeNames">
 		<el-collapse-item
 			title="class2: ['1', '2', '3'].map(parseInt); 输出结果"
 			name="1"
 		>
 			<div>
-				结果: {{ ['1', '2', '3'].map(parseInt) }} <br />
+				结果: {{ [1, 2, 3].map(parseInt) }} <br />
 				<el-button @click="class2">查看打印信息</el-button>
 			</div>
 		</el-collapse-item>
@@ -106,7 +106,9 @@
 				返回值大于0 即a-b 大于 0 ， a 和 b 交换位置 <br>返回值大于0 即a-b
 				小于 0 ， a 和 b 位置不变<br> 返回值等于0 即a-b = 0 ， a 和 b
 				位置不变
+				 
 			</div>
+			<el-button @click="sort">查看效果</el-button>
 		</el-collapse-item>
 		<el-collapse-item
 			title="call 和 apply 的区别是什么，哪个性能更好一些"
@@ -131,13 +133,10 @@ export default {
 		}
 	},
 	methods: {
-		handleChange(val) {
-			console.log(val)
-		},
+	
 		class2() {
-			console.log('class2')
-			;['1', '2', '3'].map(parseInt)
-			console.log(['1', '2', '3'].map(parseInt))
+			console.log(`class2: [1, 2, 3].map(parseInt); 输出结果================`);
+			console.log(['1', '2', '3'].map(parseInt));
 			//['1', '2', '3'].map(parseInt) 这道题主要是考map 和 parseInt 方法
 			//map
 			// array.map(callback,[ thisObject]);
@@ -146,22 +145,17 @@ export default {
 			// [].map(function(value, index, array) {
 			//     // ...
 			// });
-			let data = [1, 2, 3, 4]
-			let arrayOfSquares = data.map(function(item) {
-				return item * item
-			})
-
-			console.log(arrayOfSquares) // 1, 4, 9, 16
 			//parseInt 的用法
-			parseInt('123', 5)
-			console.log(parseInt('123', 5))
+			
+			console.log(`parseInt('123', 5)=>`+parseInt('123', 5))
 			//将"123"看作5进制的数，返回十进制数 38 => 1*5^2 + 2*5^1 + 3*5^0 = 38
 			//parseInt('3'2);// 3不能看作2进制的数
+			//parseInt('2'1);// 2不能看作1进制的数
 			//参考网址链接
 			//https://blog.csdn.net/weixin_41910848/article/details/88538962
 			//https://www.cnblogs.com/xuan52rock/p/4460949.html
 		},
-		debounce(fn) {
+		debounce(fn,time) {
 			let timeOut = null //定时器
 			return function() {
 				if (timeOut) {
@@ -169,14 +163,14 @@ export default {
 				}
 				timeOut = setTimeout(() => {
 					fn.apply(this)
-				}, 1000)
+				}, time)
 			}
 		},
 		sayHi() {
 			console.log('防抖成功')
 		},
 		scroll() {
-			window.addEventListener('scroll', this.debounce(this.sayHi))
+			window.addEventListener('resize', this.debounce(this.sayHi,1000))
 		},
 		throttle(fn) {
 			let canRun = true
@@ -338,6 +332,11 @@ export default {
 			}
 			console.log(jsonToStrMap('{"name":"An","des":"JS"}'))
 		},
+		sort(){
+			console.log(`sort [3, 15, 8, 29, 102, 22].sort((a,b) => {return a - b})`);
+			console.log([3, 15, 8, 29, 102, 22].sort((a,b) => {return a - b}));
+			
+		}
 	},
 }
 </script>
