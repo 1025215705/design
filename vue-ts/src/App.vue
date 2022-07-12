@@ -4,7 +4,8 @@
 			<router-link to="/class">class</router-link> |
 			<router-link to="/js">js</router-link>|
 			<router-link to="/design">design</router-link>|
-			<router-link to="/layout">layout</router-link>
+			<router-link to="/layout">layout</router-link>|
+		    <router-link to="/es6">es</router-link>
 		</div>
 		<router-view />
 	</div>
